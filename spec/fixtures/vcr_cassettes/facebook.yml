@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://graph.facebook.com/?id=http://zerohedge.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/43.0.2357.125 Safari/537.36
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - graph.facebook.com
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - '"d5d0e3e7c7f4d75717540fe4772b3919f582ba8b"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - CghLACWoKPQ
+      X-Fb-Rev:
+      - '2691069'
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      X-Fb-Debug:
+      - MDdAH7JVk0Uc1zkJdejz9AGs85Q0LHnUTQ6gU0mR1I5m9w6EIIgTQUewRQVyrUCmdRPZ5eJHfe3nEt9lDVkWGg==
+      Date:
+      - Fri, 18 Nov 2016 07:42:06 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '301'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA02RwXLCIBCG7z7FDtdGBRXT5gl66EwvPfXiIKwJLWEzQHSs
+        9d0LtlW5sfvv9/8spwkAMGo3tP1AnVgDp1IpRWvyjQkuJBf1isu1rB9lvWTV
+        v8Bg1MEOyZIvyhdUxvoWPB4iRJsQdhSgdbRVDnbWK6+xAtTkqbc6VtCr8Imp
+        AuUNDORssjorlVfuGG2c3YySTQ6LxTsGgmc0LcI3vHpQ4Cg7oqex7SDZHp31
+        CKlDiGPY233mBfWXBPcYjpTbJtAQIRF8Zdydy3G4mBxwW9LfGuNgMsNsCr8I
+        Flysp0JMhXwTslnWzYo/8HxYGThfxljsVMD7bWrqe/Rpo2n0Zc38ir9Ir/WF
+        rPnTHej3F7qUhmY+L4G78vxZxrHJ+Qcba6nZvgEAAA==
+    http_version: 
+  recorded_at: Fri, 18 Nov 2016 07:42:06 GMT
+recorded_with: VCR 3.0.3

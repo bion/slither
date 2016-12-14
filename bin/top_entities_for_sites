@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require_relative '../lib/database_connection'
+
+output_file = File.open('./top_ten_entity_destinations', 'w')
+
+json_output = {}
+
+Website.all.each do |website|
+  output_file.puts "#{website.url} =>"
+
+  pull_ids = website.pulls.map(&:id)
+
+  sql = ActiveRecord::Base.send(:sanitize_sql_array, [<<-SQL])
+    SELECT *, entities_counts.count
+    FROM entities
+    INNER JOIN
+    (
+      SELECT entity_id, COUNT(*) AS count
+      FROM external_links
+      WHERE pull_id IN (#{pull_ids.join(', ')})
+      GROUP BY entity_id
+      ORDER BY COUNT(*) DESC
+      LIMIT 10
+    ) entities_counts
+    ON entities.id = entities_counts.entity_id
+  SQL
+
+  json_output[website.url] = []
+
+  ActiveRecord::Base.connection.execute(sql)
+    .to_a
+    .map(&:with_indifferent_access)
+    .each do |entity|
+      json_output[website.url] = entity if entity[:count] > 20
+
+      output_file.puts "    kind: #{entity[:kind]}, name: #{entity[:name]}, number of links:  #{entity[:count]}"
+    end
+end
+
+output_file.close
+
+File.open('./top_ten_entity_destinations.json', 'w') do |f|
+  f.write JSON.generate(json_output)
+end

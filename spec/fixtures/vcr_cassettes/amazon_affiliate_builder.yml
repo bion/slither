@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://amzn.to/22FS4qp
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mechanize/2.7.5 Ruby/2.3.1p112 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - amzn.to
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 24 Nov 2016 01:22:24 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '340'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - private, max-age=90
+      Location:
+      - http://www.amazon.com/Get-Prepared-Now-Crisis-Survive/dp/150522599X/ref=as_li_ss_tl?s=books&ie=UTF8&qid=1459116119&sr=1-1&keywords=Michael+Snyder&linkCode=sl1&tag=theeconomiccollapse-20&linkId=2d1528548e226b1feb2b9f26d15d5e1c
+      Set-Cookie:
+      - _bit=gao1mo-ba37021588cdae62c3-008; Domain=amzn.to; Expires=Tue, 23 May 2017
+        01:22:24 GMT
+    body:
+      encoding: UTF-8
+      string: |-
+        <html>
+        <head><title>Bitly</title></head>
+        <body><a href="http://www.amazon.com/Get-Prepared-Now-Crisis-Survive/dp/150522599X/ref=as_li_ss_tl?s=books&amp;ie=UTF8&amp;qid=1459116119&amp;sr=1-1&amp;keywords=Michael+Snyder&amp;linkCode=sl1&amp;tag=theeconomiccollapse-20&amp;linkId=2d1528548e226b1feb2b9f26d15d5e1c">moved here</a></body>
+        </html>
+    http_version: 
+  recorded_at: Thu, 24 Nov 2016 01:22:24 GMT
+recorded_with: VCR 3.0.3

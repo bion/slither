@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require "bundler"
+Bundler.setup
+
+require "active_support/all"
+require "mechanize"
+require "json"
+require_relative "../lib/database_connection"
+
+require 'pry'
+env = ENV['SLITHER_ENV'] || 'development'
+ActiveRecord::Base.connection
+
+Pry.start(binding, prompt: proc { "Slither(#{env})> " }, quiet: true)

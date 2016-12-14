@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/database_connection'
+
+output_file = File.open('./top_ten_link_destinations', 'w')
+
+Website.all.each do |website|
+  output_file.puts "#{website.url} =>"
+
+  website
+    .pulls
+    .map(&:external_links)
+    .flatten!
+    .group_by(&:domain)
+    .map { |tuple| [tuple[0], tuple[1].size] }
+    .sort_by { |tuple| tuple[1] }
+    .reverse
+    .take(10)
+    .each do |tuple|
+      output_file.puts "    #{tuple[0]}: #{tuple[1]}"
+    end
+end

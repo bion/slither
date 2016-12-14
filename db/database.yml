@@ -1,0 +1,17 @@
+development:
+  database: <%= ENV['DB_NAME'] || 'slither_development' %>
+  adapter: 'postgresql'
+  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  password: <%= ENV['DB_PASSWORD'] || 'asdfasdf' %>
+  username: <%= ENV['DB_USER'] || 'postgres' %>
+  pool: 5
+  encoding: utf8
+test:
+  database: slither_test
+  adapter: postgresql
+  host: localhost
+  password: asdfasdf
+  username: postgres
+  pool: 5
+  encoding: utf8
+production:
