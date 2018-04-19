@@ -10,7 +10,7 @@ gem 'thread'
 
 group :development, :test do
   gem 'database_cleaner'
-  gem 'factory_girl'
+  gem 'factory_bot'
   gem 'pry'
   gem 'pry-stack_explorer'
   gem 'rspec'
